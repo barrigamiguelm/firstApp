@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="myButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:background">@android:color/holo_red_light</item>
+    </style>
+    <style name="myButton2">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:textColor">@android:color/holo_red_light</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+</resources>
