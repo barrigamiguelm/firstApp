@@ -9,4 +9,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#808080</color>
     <color name="blue">#42E9CB</color>
+    <color name="amarillo">#F2E880</color>
+    <color name="verde1">#6C8F32</color>
+    <color name="verde2">#558303</color>
+    <color name="boton">#C15C37</color>
+    <color name="text">#55F6F6F6</color>
+
 </resources>
