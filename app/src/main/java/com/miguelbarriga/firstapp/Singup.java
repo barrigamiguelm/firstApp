@@ -2,58 +2,39 @@ package com.miguelbarriga.firstapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.drawable.ColorDrawable;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.TransitionDrawable;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 
-
-public class LoginActivity extends AppCompatActivity {
-
-
-    public Button boton1;
+public class Singup extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_singup);
 
-        boton1 = (Button)  findViewById(R.id.boton1);
 
-        ImageView mBoy = findViewById(R.id.boy);
+        ImageView mGirl = findViewById(R.id.girl);
 
         Glide.with(this)
-                .load(R.drawable.hipman)
+                .load(R.drawable.girl)
 
 //                .load("https://images.unsplash.com/photo-1565214975484-3cfa9e56f914?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1482&q=80")
                 .transition(DrawableTransitionOptions.withCrossFade(100))
 //                .centerCrop()
 //                .placeholder(new ColorDrawable(this.getResources().getColor(R.color.fucsia_200)))
 //                .circleCrop()
-                .into(mBoy);
+                .into(mGirl);
 
     }
 
 
-
-    public void openMain(View v){
-        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-    }
-    public void openSignup(View v){
-        Intent intent = new Intent(LoginActivity.this, Singup.class);
+    public void openLogin(View v){
+        Intent intent = new Intent(Singup.this, LoginActivity.class);
         startActivity(intent);
     }
-
-
-
-
 }
