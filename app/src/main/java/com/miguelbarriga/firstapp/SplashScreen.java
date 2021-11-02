@@ -54,7 +54,7 @@ public class SplashScreen extends AppCompatActivity {
     }
 
 
-    public void openApp(boolean locationPerission) {
+    private void openApp(boolean locationPerission) {
        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
            @Override
            public void run() {
