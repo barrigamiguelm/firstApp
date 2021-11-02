@@ -17,4 +17,13 @@
         <item name="strokeColor">@color/boton</item>
     </style>
 
+
+    <style name="nombrapp" >
+        <item name="android:textColor">@color/boton</item>
+        <item name="android:textSize">50dp</item>
+        <item name="fontFamily">@font/font2</item>
+    </style>
+
+style>
+
 </resources>

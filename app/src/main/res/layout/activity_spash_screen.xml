@@ -24,14 +24,26 @@
         android:id="@+id/icono"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:onClick="openLogin"
         android:src="@drawable/ic_avocado_svgrepo_com"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck">
 
     </ImageView>
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="aBocados"
+        style="@style/nombrapp"
+        android:layout_marginBottom="120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/icono" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

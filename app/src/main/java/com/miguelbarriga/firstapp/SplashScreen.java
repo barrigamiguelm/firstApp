@@ -1,18 +1,18 @@
 package com.miguelbarriga.firstapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.view.View;
 import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.view.animation.AnimationUtils;
-import android.view.animation.RotateAnimation;
-import android.view.animation.ScaleAnimation;
-import android.view.animation.TranslateAnimation;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
@@ -32,6 +32,10 @@ public class SplashScreen extends AppCompatActivity {
 
         ImageView fondo = findViewById(R.id.fondo);
         ImageView icono = findViewById(R.id.icono);
+        TextView tv1 = findViewById(R.id.tv1);
+
+
+
 
         Glide.with(this)
                 //  .load(R.drawable.hipman)
@@ -47,9 +51,17 @@ public class SplashScreen extends AppCompatActivity {
         Animation fadein = AnimationUtils.loadAnimation(
                 this, R.anim.fadein);
         fondo.startAnimation(fadein);
-        Animation move = AnimationUtils.loadAnimation(
-                this, R.anim.move);
-        icono.startAnimation(move);
+
+        Animation moveicono = AnimationUtils.loadAnimation(
+                this, R.anim.moveicono);
+        icono.startAnimation(moveicono);
+
+        Animation moveletra = AnimationUtils.loadAnimation(
+                this, R.anim.moveletra);
+        tv1.startAnimation(moveletra);
+
+
+
 
     }
 
