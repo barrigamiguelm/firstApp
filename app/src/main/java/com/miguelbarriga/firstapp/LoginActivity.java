@@ -2,10 +2,7 @@ package com.miguelbarriga.firstapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.drawable.ColorDrawable;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.TransitionDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,17 +23,22 @@ public class LoginActivity extends AppCompatActivity {
 
         boton1 = (Button)  findViewById(R.id.boton1);
 
-        ImageView mBoy = findViewById(R.id.boy);
+        ImageView mBoy = findViewById(R.id.fondo);
 
         Glide.with(this)
-                .load(R.drawable.hipman)
+                .load(R.drawable.fondogris)
 
+
+  //              .load("https://t1.ev.ltmcdn.com/es/posts/4/9/2/que_es_ser_vegano_1294_1_600.jpg")
 //                .load("https://images.unsplash.com/photo-1565214975484-3cfa9e56f914?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1482&q=80")
                 .transition(DrawableTransitionOptions.withCrossFade(100))
 //                .centerCrop()
 //                .placeholder(new ColorDrawable(this.getResources().getColor(R.color.fucsia_200)))
 //                .circleCrop()
                 .into(mBoy);
+
+
+
 
     }
 
@@ -52,6 +54,8 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(LoginActivity.this, Singup.class);
         startActivity(intent);
     }
+
+
 
 
 

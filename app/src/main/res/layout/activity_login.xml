@@ -7,10 +7,14 @@
 
 
     <ImageView
-        android:id="@+id/boy"
+        android:id="@+id/fondo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitStart" />
+        android:scaleType="centerCrop"
+        android:scaleY="-1"
+        />
+
+
 
     <View
         android:layout_width="match_parent"
@@ -22,7 +26,7 @@
         android:id="@+id/icono"
         android:layout_width="0dp"
         android:layout_height="80dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="100dp"
         android:src="@drawable/ic_avocado_svgrepo_com"
         app:layout_constraintBottom_toTopOf="@id/username"
         app:layout_constraintEnd_toStartOf="@id/guideline4"
@@ -38,10 +42,10 @@
         android:layout_height="wrap_content"
         android:background="@color/text"
         android:maxHeight="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toStartOf="@id/guideline4"
         app:layout_constraintStart_toStartOf="@id/guideline3"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/icono"
         app:startIconDrawable="@drawable/profile">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -88,7 +92,7 @@
     <Button
         android:id="@+id/boton2"
         style="@style/myButton1"
-        android:text="OK"
+        android:text="CANCEL"
         android:layout_width="0dp"
         app:layout_constraintEnd_toEndOf="@id/guideline4"
         app:layout_constraintStart_toEndOf="@id/guideline3"

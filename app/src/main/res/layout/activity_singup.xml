@@ -11,7 +11,9 @@
         android:id="@+id/girl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitStart" />
+        android:scaleType="fitStart"
+        android:scaleX="-1"
+        />
 
     <View
         android:layout_width="match_parent"

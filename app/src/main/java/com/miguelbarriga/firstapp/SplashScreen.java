@@ -32,6 +32,8 @@ public class SplashScreen extends AppCompatActivity {
 
         ImageView fondo = findViewById(R.id.fondo);
         ImageView icono = findViewById(R.id.icono);
+        ImageView icono2 = findViewById(R.id.icono2);
+
         TextView tv1 = findViewById(R.id.tv1);
 
 
@@ -59,6 +61,10 @@ public class SplashScreen extends AppCompatActivity {
         Animation moveletra = AnimationUtils.loadAnimation(
                 this, R.anim.moveletra);
         tv1.startAnimation(moveletra);
+
+        Animation otroicono = AnimationUtils.loadAnimation(
+                this, R.anim.otroicono);
+        icono2.startAnimation(otroicono);
 
 
 
