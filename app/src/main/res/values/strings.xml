@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">firstApp</string>
-    <string name="sing_text">¿Have you got an account?</string>
+    <string name="sing_text">Crear una nueva cuenta</string>
+    <string name="create">¡Bienvenido!</string>
 </resources>

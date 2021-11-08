@@ -1,11 +1,8 @@
 package com.miguelbarriga.firstapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.res.ResourcesCompat;
 
 import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -23,7 +20,7 @@ public class SplashScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_spash_screen);
+        setContentView(R.layout.activity_splash_screen);
 
         //splash-abrir solo
 
@@ -32,7 +29,6 @@ public class SplashScreen extends AppCompatActivity {
 
         ImageView fondo = findViewById(R.id.fondo);
         ImageView icono = findViewById(R.id.icono);
-        ImageView icono2 = findViewById(R.id.icono2);
 
         TextView tv1 = findViewById(R.id.tv1);
 
@@ -49,11 +45,6 @@ public class SplashScreen extends AppCompatActivity {
 //                .circleCrop()
                 .into(fondo);
 
-
-        Animation fadein = AnimationUtils.loadAnimation(
-                this, R.anim.fadein);
-        fondo.startAnimation(fadein);
-
         Animation moveicono = AnimationUtils.loadAnimation(
                 this, R.anim.moveicono);
         icono.startAnimation(moveicono);
@@ -61,12 +52,6 @@ public class SplashScreen extends AppCompatActivity {
         Animation moveletra = AnimationUtils.loadAnimation(
                 this, R.anim.moveletra);
         tv1.startAnimation(moveletra);
-
-        Animation otroicono = AnimationUtils.loadAnimation(
-                this, R.anim.otroicono);
-        icono2.startAnimation(otroicono);
-
-
 
 
     }
@@ -80,7 +65,7 @@ public class SplashScreen extends AppCompatActivity {
                        .this,LoginActivity.class);
                startActivity(intent);
                }
-           },2000);
+           },2400);
        }
     }
 

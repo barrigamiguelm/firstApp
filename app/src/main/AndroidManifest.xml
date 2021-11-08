@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstApp">
         <activity
-            android:name=".Singup"
+            android:name=".Signup"
             android:exported="false"
             android:parentActivityName=".LoginActivity"/>
         <activity
