@@ -22,18 +22,32 @@
         android:alpha="0.5"
         android:background="@drawable/gradient" />
 
-    <ImageView
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/anima"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toTopOf="@id/username"
+        app:layout_constraintEnd_toStartOf="@id/guideline4"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/avocado"
+        app:lottie_loop="true"
+        />
+
+   <!-- <ImageView
         android:id="@+id/icono"
         android:layout_width="0dp"
         android:layout_height="80dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="180dp"
         android:src="@drawable/ic_avocado_svgrepo_com"
         app:layout_constraintBottom_toTopOf="@id/username"
         app:layout_constraintEnd_toStartOf="@id/guideline4"
         app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintTop_toTopOf="parent">
 
-    </ImageView>
+    </ImageView>-->
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -42,10 +56,10 @@
         android:layout_height="wrap_content"
         android:background="@color/text"
         android:maxHeight="100dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toStartOf="@id/guideline4"
         app:layout_constraintStart_toStartOf="@id/guideline3"
-        app:layout_constraintTop_toBottomOf="@id/icono"
+        app:layout_constraintTop_toBottomOf="@id/anima"
         app:startIconDrawable="@drawable/profile">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -110,7 +124,7 @@
         android:onClick="openSignup"
         android:text="@string/sing_text"
         android:textColor="@color/white"
-        android:textSize="16dp"
+        android:textSize="23dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/boton2">

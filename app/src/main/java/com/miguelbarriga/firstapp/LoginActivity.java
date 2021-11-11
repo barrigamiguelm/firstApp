@@ -5,14 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import com.airbnb.lottie.LottieAnimationView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 
 
 public class LoginActivity extends AppCompatActivity {
-
+    LottieAnimationView lottieAnimationView;
 
     public Button boton1;
 
@@ -22,11 +26,11 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         boton1 = (Button)  findViewById(R.id.boton1);
-
+        lottieAnimationView = findViewById(R.id.anima);
         ImageView mBoy = findViewById(R.id.fondo);
 
         Glide.with(this)
-                .load(R.drawable.fondogris)
+                .load(R.drawable.fondogrismirror)
 
 
   //              .load("https://t1.ev.ltmcdn.com/es/posts/4/9/2/que_es_ser_vegano_1294_1_600.jpg")
@@ -37,6 +41,10 @@ public class LoginActivity extends AppCompatActivity {
 //                .circleCrop()
                 .into(mBoy);
 
+
+        Animation animlogin = AnimationUtils.loadAnimation(
+                this, R.anim.animlogin);
+        lottieAnimationView.startAnimation(animlogin);
 
 
 
@@ -49,10 +57,12 @@ public class LoginActivity extends AppCompatActivity {
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
     public void openSignup(View v){
         Intent intent = new Intent(LoginActivity.this, Signup.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
 

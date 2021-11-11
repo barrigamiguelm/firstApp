@@ -20,7 +20,22 @@
         android:alpha="0.7"
         android:background="@color/grey" />
 
-    <ImageView
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/anima"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_marginBottom="100px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/avocado"
+        app:lottie_loop="true"
+        />
+
+
+   <!-- <ImageView
         android:id="@+id/icono"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -30,7 +45,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
-
+-->
 
     <TextView
         android:id="@+id/tv1"
@@ -38,11 +53,13 @@
         android:layout_height="wrap_content"
         android:text="aBocados"
         style="@style/nombrapp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginTop="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/icono" />
+        app:layout_constraintTop_toTopOf="@id/anima" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

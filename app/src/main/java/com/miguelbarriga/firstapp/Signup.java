@@ -21,7 +21,7 @@ public class Signup extends AppCompatActivity {
         ImageView mGirl = findViewById(R.id.fondo);
 
         Glide.with(this)
-                .load(R.drawable.fondogris)
+                .load(R.drawable.fondogrismirror)
 
 //                .load("https://t1.ev.ltmcdn.com/es/posts/4/9/2/que_es_ser_vegano_1294_1_600.jpg")
                 .transition(DrawableTransitionOptions.withCrossFade(100))
@@ -36,5 +36,11 @@ public class Signup extends AppCompatActivity {
     public void openLogin(View v){
         Intent intent = new Intent(Signup.this, LoginActivity.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+    }
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 }

@@ -11,24 +11,32 @@ import android.widget.ImageView;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 
 public class SplashScreen extends AppCompatActivity {
 
+    LottieAnimationView lottieAnimationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
+
+
         //splash-abrir solo
 
         openApp(true);
 
 
+
+
         ImageView fondo = findViewById(R.id.fondo);
-        ImageView icono = findViewById(R.id.icono);
+        ImageView icono = findViewById(R.id.anima);
+
+        lottieAnimationView = findViewById(R.id.anima);
 
         TextView tv1 = findViewById(R.id.tv1);
 
@@ -47,7 +55,7 @@ public class SplashScreen extends AppCompatActivity {
 
         Animation moveicono = AnimationUtils.loadAnimation(
                 this, R.anim.moveicono);
-        icono.startAnimation(moveicono);
+        lottieAnimationView.startAnimation(moveicono);
 
         Animation moveletra = AnimationUtils.loadAnimation(
                 this, R.anim.moveletra);
@@ -64,6 +72,8 @@ public class SplashScreen extends AppCompatActivity {
                Intent intent = new Intent ( SplashScreen
                        .this,LoginActivity.class);
                startActivity(intent);
+               overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+
                }
            },2400);
        }
