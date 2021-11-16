@@ -1,6 +1,8 @@
 package com.miguelbarriga.firstapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +15,12 @@ import android.widget.AdapterView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
+
 public class MainActivity extends AppCompatActivity {
+
+
+    private SwipeRefreshLayout swipeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +28,26 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+
         TextView mycontext = (TextView) findViewById(R.id.textTap);
         registerForContextMenu(mycontext);
 
+        swipeLayout = (SwipeRefreshLayout) findViewById(R.id.myswipe);
+        swipeLayout.setOnRefreshListener(mOnRefreshListener);
+
+
 
     }
+
+    protected SwipeRefreshLayout.OnRefreshListener mOnRefreshListener = new SwipeRefreshLayout.OnRefreshListener() {
+        @Override
+        public void onRefresh() {
+            Toast toast0 = Toast.makeText(MainActivity.this, "Hi there! I don't exist :)", Toast.LENGTH_LONG);
+            toast0.show();
+            swipeLayout.setRefreshing(false);
+        }
+    };
+
 
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
@@ -39,13 +61,33 @@ public class MainActivity extends AppCompatActivity {
                 item.getMenuInfo();
         switch (item.getItemId()) {
             case R.id.item:
-                Toast toast = Toast.makeText(this,"Has copiado el texto", Toast.LENGTH_LONG );
-                toast.show();
+//                Toast toast = Toast.makeText(this,"Has copiado el texto", Toast.LENGTH_LONG );
+//                toast.show();
+//                return true;
+
+
+                final ConstraintLayout mLayout =  findViewById(R.id.myMainConstraint);
+
+                Snackbar snackbar = Snackbar
+                        .make(mLayout, "fancy a Snack while you refresh?", Snackbar.LENGTH_LONG)
+                        .setAction("UNDO", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Snackbar snackbar1 = Snackbar.make(mLayout, "Action is restored!", Snackbar.LENGTH_SHORT);
+                                snackbar1.show();
+                            }
+                        });
+
+                snackbar.show();
+
+
                 return true;
             case R.id.item2:
-                Toast toast2 = Toast.makeText(this,"Descargando el texto",  Toast.LENGTH_LONG );
-                toast2.show();
-                return true;
+               Toast toast2 = Toast.makeText(this,"Descargando el texto",  Toast.LENGTH_LONG );
+               toast2.show();
+              return true;
+
+
             default:
                 return super.onContextItemSelected(item);
         }
