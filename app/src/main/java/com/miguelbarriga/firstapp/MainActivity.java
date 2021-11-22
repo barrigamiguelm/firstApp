@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
             Toast toast0 = Toast.makeText(MainActivity.this, "Hi there! I don't exist :)", Toast.LENGTH_LONG);
             miVisorWeb.reload();
             swipeLayout.setRefreshing(false);
+            swipeLayout.setProgressBackgroundColorSchemeResource(R.color.boton);
         }
     };
 

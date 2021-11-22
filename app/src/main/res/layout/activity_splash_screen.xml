@@ -12,13 +12,9 @@
         android:id="@+id/fondo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitStart" />
+        android:scaleType="fitStart"
+        android:alpha="0.5"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:alpha="0.7"
-        android:background="@color/grey" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/anima"

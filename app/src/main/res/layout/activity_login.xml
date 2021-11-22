@@ -8,6 +8,7 @@
 
     <ImageView
         android:id="@+id/fondo"
+        android:alpha="0.7"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
@@ -16,11 +17,7 @@
 
 
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:alpha="0.5"
-        android:background="@drawable/gradient" />
+
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/anima"

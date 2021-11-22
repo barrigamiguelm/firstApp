@@ -1,11 +1,21 @@
 package com.miguelbarriga.firstapp;
 
+import static com.bumptech.glide.request.RequestOptions.bitmapTransform;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.renderscript.Allocation;
+import android.renderscript.Element;
+import android.renderscript.RenderScript;
+import android.renderscript.ScriptIntrinsicBlur;
 import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.view.animation.AnimationUtils;
@@ -15,9 +25,15 @@ import com.airbnb.lottie.LottieAnimationView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 
+import jp.wasabeef.glide.transformations.BlurTransformation;
+
+
 public class SplashScreen extends AppCompatActivity {
 
     LottieAnimationView lottieAnimationView;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +47,6 @@ public class SplashScreen extends AppCompatActivity {
         openApp(true);
 
 
-
-
         ImageView fondo = findViewById(R.id.fondo);
         ImageView icono = findViewById(R.id.anima);
 
@@ -41,17 +55,20 @@ public class SplashScreen extends AppCompatActivity {
         TextView tv1 = findViewById(R.id.tv1);
 
 
-
-
         Glide.with(this)
                 //  .load(R.drawable.hipman)
 
                 .load("https://images.pexels.com/photos/1580466/pexels-photo-1580466.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
                 .transition(DrawableTransitionOptions.withCrossFade(100))
                 .centerCrop()
-//                .placeholder(new ColorDrawable(this.getResources().getColor(R.color.fucsia_200)))
-//                .circleCrop()
+                .apply(bitmapTransform(new BlurTransformation(22)))
                 .into(fondo);
+
+
+
+
+
+
 
         Animation moveicono = AnimationUtils.loadAnimation(
                 this, R.anim.moveicono);

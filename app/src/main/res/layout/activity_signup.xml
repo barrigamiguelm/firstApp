@@ -12,13 +12,13 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:scaleY="-1"
+        android:alpha="0.7"
         />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:alpha="0.5"
-        android:background="@drawable/gradient" />
+      />
 
 
     <com.google.android.material.textfield.TextInputLayout
