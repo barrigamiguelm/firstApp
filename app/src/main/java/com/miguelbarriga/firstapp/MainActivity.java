@@ -64,99 +64,42 @@ public class MainActivity extends AppCompatActivity {
 
     //menu contextual pero con bajar foto
 
-    @Override
-    public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
-        super.onCreateContextMenu(contextMenu, view, contextMenuInfo);
 
-
-        final WebView.HitTestResult webViewHitTestResult = miVisorWeb.getHitTestResult();
-
-        if (webViewHitTestResult.getType() == WebView.HitTestResult.IMAGE_TYPE ||
-                webViewHitTestResult.getType() == WebView.HitTestResult.SRC_IMAGE_ANCHOR_TYPE) {
-
-
-            contextMenu.setHeaderTitle("Descargando Imagen...");
-
-            contextMenu.add(0, 1, 0, "Pulsa aqui para descargar")
-                    .setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-                        @Override
-                        public boolean onMenuItemClick(MenuItem menuItem) {
-
-                            String DownloadImageURL = webViewHitTestResult.getExtra();
-
-                            if (URLUtil.isValidUrl(DownloadImageURL)) {
-
-                                DownloadManager.Request mRequest = new DownloadManager.Request(Uri.parse(DownloadImageURL));
-                                mRequest.allowScanningByMediaScanner();
-                                mRequest.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-                                DownloadManager mDownloadManager = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
-                                mDownloadManager.enqueue(mRequest);
-
-                                Toast.makeText(MainActivity.this, "Imagen descargada corectamente...", Toast.LENGTH_LONG).show();
-                            } else {
-                                Toast.makeText(MainActivity.this, "Sorry.. Something Went Wrong...", Toast.LENGTH_LONG).show();
-                            }
-                            return false;
-                        }
-                    });
-        }
-    }
-
-    //modo normal sin descargas
-
-
-
-   /* @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
-        final WebView.HitTestResult result = miVisorWeb.getHitTestResult();
-        MenuItem.OnMenuItemClickListener handler = new MenuItem.OnMenuItemClickListener() {
-            public boolean onMenuItemClick(MenuItem item) {
-                // handle on context menu click
-                return true;
-            }
-        };
-    }*/
-
-
-   /* @Override
-    public boolean onContextItemSelected(MenuItem item) {
-        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)
-                item.getMenuInfo();
-        switch (item.getItemId()) {
-            case R.id.item:
-            case R.id.item2:
-               Toast toast2 = Toast.makeText(this,"Descargando el texto",  Toast.LENGTH_LONG );
-               toast2.show();
-
-                //                Toast toast = Toast.makeText(this,"Has copiado el texto", Toast.LENGTH_LONG );
-//                toast.show();
-//                return true;
-
-
-                final ConstraintLayout mLayout =  findViewById(R.id.myMainConstraint);
-
-                Snackbar snackbar = Snackbar
-                        .make(mLayout, "fancy a Snack while you refresh?", Snackbar.LENGTH_LONG)
-                        .setAction("UNDO", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                               Snackbar snackbar1 = Snackbar.make(mLayout, "Action is restored!", Snackbar.LENGTH_SHORT);
-                                snackbar1.show();
-                            }
-                        });
-
-                snackbar.show();
-
-
-                return true;
-
-
-            default:
-                return super.onContextItemSelected(item);
-        }
+        menu.setHeaderTitle("Select Menu");
+        menu.add(0, v.getId(), 0, "Pulse aqui para ir al link");
+        menu.add(0, 1, 0, "Pulsa aqui para descargar");
     }
-*/
+
+
+    public boolean onContextItemSelected(MenuItem item) {
+        final WebView.HitTestResult webViewHitTestResult = miVisorWeb.getHitTestResult();
+
+        if (item.getTitle() == "Pulsa aqui para descargar") {
+            String DownloadImageURL = webViewHitTestResult.getExtra();
+
+            if (URLUtil.isValidUrl(DownloadImageURL)) {
+
+                DownloadManager.Request mRequest = new DownloadManager.Request(Uri.parse(DownloadImageURL));
+                mRequest.allowScanningByMediaScanner();
+                mRequest.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                DownloadManager mDownloadManager = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+                mDownloadManager.enqueue(mRequest);
+
+                Toast.makeText(MainActivity.this, "Imagen descargada corectamente...", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(MainActivity.this, "Sorry.. Something Went Wrong...", Toast.LENGTH_LONG).show();
+            }
+            return false;
+        }
+        if (item.getTitle() == "Pulse aqui para ir al link") {
+            String webUrl = miVisorWeb.getUrl();
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(webUrl)));
+        }
+        return false;
+    }
+
 
     //appbar
 
@@ -188,3 +131,57 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
+
+//modo normal sin descargas
+
+/* @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        final WebView.HitTestResult result = miVisorWeb.getHitTestResult();
+        MenuItem.OnMenuItemClickListener handler = new MenuItem.OnMenuItemClickListener() {
+            public boolean onMenuItemClick(MenuItem item) {
+                // handle on context menu click
+                return true;
+            }
+        };
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.item1:
+                Toast toast = Toast.makeText(this, "Item copied",
+                        Toast.LENGTH_LONG);
+//                toast.show();
+
+                final ConstraintLayout mLayout =  findViewById(R.id.myMainConstraint);
+
+                Snackbar snackbar = Snackbar
+                        .make(mLayout, "fancy a Snack while you refresh?", Snackbar.LENGTH_LONG)
+                        .setAction("UNDO", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Snackbar snackbar1 = Snackbar.make(mLayout, "Action is restored!", Snackbar.LENGTH_SHORT);
+                                snackbar1.show();
+                            }
+                        });
+
+                snackbar.show();
+
+
+                return true;
+
+            case R.id.item2:
+                Toast toast2 = Toast.makeText(this, "Downloading item...",
+                        Toast.LENGTH_LONG);
+                toast2.show();
+                return true;
+
+            default:
+                return super.onContextItemSelected(item);
+        }
+
+    }
+*/
+
