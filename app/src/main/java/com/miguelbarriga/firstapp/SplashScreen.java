@@ -56,7 +56,6 @@ public class SplashScreen extends AppCompatActivity {
 
 
         Glide.with(this)
-                //  .load(R.drawable.hipman)
 
                 .load("https://images.pexels.com/photos/1580466/pexels-photo-1580466.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
                 .transition(DrawableTransitionOptions.withCrossFade(100))

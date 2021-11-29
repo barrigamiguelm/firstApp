@@ -5,11 +5,11 @@
    >
     <item
         android:id="@+id/item"
-        android:title="copy"
+        android:title="Ir a la receta"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/item2"
-        android:title="download"
+        android:title="Descargar imagen"
         app:showAsAction="ifRoom" />
 
 

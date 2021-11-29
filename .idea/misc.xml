@@ -28,6 +28,7 @@
         <entry key="..\:/2DAM/DI/miapp/app/src/main/res/drawable/button1border.xml" value="0.271875" />
         <entry key="..\:/2DAM/DI/miapp/app/src/main/res/drawable/button2border.xml" value="0.271875" />
         <entry key="..\:/2DAM/DI/miapp/app/src/main/res/drawable/comida.xml" value="0.22135416666666666" />
+        <entry key="..\:/2DAM/DI/miapp/app/src/main/res/drawable/gradient.xml" value="0.3828125" />
         <entry key="..\:/2DAM/DI/miapp/app/src/main/res/drawable/ic_avocado_svgrepo_com.xml" value="0.22135416666666666" />
         <entry key="..\:/2DAM/DI/miapp/app/src/main/res/drawable/ic_email_background.xml" value="0.22135416666666666" />
         <entry key="..\:/2DAM/DI/miapp/app/src/main/res/drawable/ic_email_foreground.xml" value="0.22135416666666666" />
@@ -37,9 +38,10 @@
         <entry key="..\:/2DAM/DI/miapp/app/src/main/res/drawable/nevera.xml" value="0.3828125" />
         <entry key="..\:/2DAM/DI/miapp/app/src/main/res/drawable/profile.xml" value="0.22135416666666666" />
         <entry key="..\:/2DAM/DI/miapp/app/src/main/res/layout/activity_login.xml" value="0.35733695652173914" />
-        <entry key="..\:/2DAM/DI/miapp/app/src/main/res/layout/activity_main.xml" value="0.24748743718592964" />
+        <entry key="..\:/2DAM/DI/miapp/app/src/main/res/layout/activity_main.xml" value="0.3238786279683377" />
         <entry key="..\:/2DAM/DI/miapp/app/src/main/res/layout/activity_signup.xml" value="0.20520833333333333" />
         <entry key="..\:/2DAM/DI/miapp/app/src/main/res/layout/activity_splash_screen.xml" value="0.36666666666666664" />
+        <entry key="..\:/2DAM/DI/miapp/app/src/main/res/layout/alert.xml" value="0.2557291666666667" />
         <entry key="..\:/2DAM/DI/miapp/app/src/main/res/menu/appbar.xml" value="0.36666666666666664" />
         <entry key="..\:/2DAM/DI/miapp/app/src/main/res/menu/menu_contextual.xml" value="0.20520833333333333" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />

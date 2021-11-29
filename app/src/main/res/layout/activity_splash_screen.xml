@@ -12,15 +12,15 @@
         android:id="@+id/fondo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitStart"
-        android:alpha="0.5"/>
+        android:scaleType="centerCrop"
+        android:alpha="0.2"/>
 
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/anima"
         android:layout_width="wrap_content"
         android:layout_height="300dp"
-        android:layout_marginBottom="100px"
+        android:layout_marginBottom="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:text="aBocados"
         style="@style/nombrapp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

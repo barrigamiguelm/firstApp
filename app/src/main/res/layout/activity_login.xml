@@ -23,7 +23,7 @@
         android:id="@+id/anima"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="80dp"
         app:layout_constraintBottom_toTopOf="@id/username"
         app:layout_constraintEnd_toStartOf="@id/guideline4"
         app:layout_constraintStart_toStartOf="@id/guideline3"
@@ -33,18 +33,6 @@
         app:lottie_loop="true"
         />
 
-   <!-- <ImageView
-        android:id="@+id/icono"
-        android:layout_width="0dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="180dp"
-        android:src="@drawable/ic_avocado_svgrepo_com"
-        app:layout_constraintBottom_toTopOf="@id/username"
-        app:layout_constraintEnd_toStartOf="@id/guideline4"
-        app:layout_constraintStart_toStartOf="@id/guideline3"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </ImageView>-->
 
 
     <com.google.android.material.textfield.TextInputLayout
