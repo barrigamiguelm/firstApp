@@ -21,7 +21,7 @@ public class Signup extends AppCompatActivity {
         ImageView mGirl = findViewById(R.id.fondo);
 
         Glide.with(this)
-                .load(R.drawable.fondogrismirror)
+                .load(R.drawable.tabla2)
 
 //                .load("https://t1.ev.ltmcdn.com/es/posts/4/9/2/que_es_ser_vegano_1294_1_600.jpg")
                 .transition(DrawableTransitionOptions.withCrossFade(100))

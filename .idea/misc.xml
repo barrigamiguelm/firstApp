@@ -44,6 +44,12 @@
         <entry key="..\:/2DAM/DI/miapp/app/src/main/res/layout/alert.xml" value="0.2557291666666667" />
         <entry key="..\:/2DAM/DI/miapp/app/src/main/res/menu/appbar.xml" value="0.36666666666666664" />
         <entry key="..\:/2DAM/DI/miapp/app/src/main/res/menu/menu_contextual.xml" value="0.20520833333333333" />
+        <entry key="..\:/Perfiles/am9dam2/DI/miapp/app/src/main/res/drawable/comida.xml" value="0.22135416666666666" />
+        <entry key="..\:/Perfiles/am9dam2/DI/miapp/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
+        <entry key="..\:/Perfiles/am9dam2/DI/miapp/app/src/main/res/layout/activity_main.xml" value="0.20520833333333333" />
+        <entry key="..\:/Perfiles/am9dam2/DI/miapp/app/src/main/res/layout/activity_signup.xml" value="0.36666666666666664" />
+        <entry key="..\:/Perfiles/am9dam2/DI/miapp/app/src/main/res/layout/activity_splash_screen.xml" value="0.36666666666666664" />
+        <entry key="..\:/Perfiles/am9dam2/DI/miapp/app/src/main/res/layout/alert.xml" value="0.27355072463768115" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
       </map>
     </option>

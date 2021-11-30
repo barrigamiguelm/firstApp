@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         ImageView mBoy = findViewById(R.id.fondo);
 
         Glide.with(this)
-                .load(R.drawable.fondogrismirror)
+                .load(R.drawable.mesa)
 
 
   //              .load("https://t1.ev.ltmcdn.com/es/posts/4/9/2/que_es_ser_vegano_1294_1_600.jpg")

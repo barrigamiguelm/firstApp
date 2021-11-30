@@ -4,6 +4,7 @@ import static android.content.ContentValues.TAG;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.DialogFragment;
@@ -24,6 +25,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.ContextMenu;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -34,6 +36,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -54,10 +57,7 @@ public class MainActivity extends AppCompatActivity {
     private SwipeRefreshLayout swipeLayout;
     AlertDialog dialog;
     AlertDialog.Builder builder;
-    ImageView foto1;
-
-
-    //para el dialogo
+    ImageView foto1, foto2, foto3, foto4, foto5, foto6, foto7;
 
 
     @Override
@@ -66,8 +66,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         foto1 = (ImageView) findViewById(R.id.foto1);
+        foto2 = (ImageView) findViewById(R.id.foto2);
+        foto3 = (ImageView) findViewById(R.id.foto3);
+        foto4 = (ImageView) findViewById(R.id.foto4);
+        foto5 = (ImageView) findViewById(R.id.foto5);
+        foto6 = (ImageView) findViewById(R.id.foto6);
+        foto7 = (ImageView) findViewById(R.id.foto7);
+
+        /*linea = (LinearLayout) findViewById(R.id.linear);*/
 
         registerForContextMenu(foto1);
+        registerForContextMenu(foto2);
+        registerForContextMenu(foto3);
+        registerForContextMenu(foto4);
+        registerForContextMenu(foto5);
+        registerForContextMenu(foto6);
+        registerForContextMenu(foto7);
 
 
     }
@@ -76,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
 //----------------alert box
 
 
-    public void showAlertDialogButtonClicked(MainActivity main) {
+    public void showAlertDesconectar(MainActivity main) {
 
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
 
@@ -144,6 +158,30 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
     }
 
+    public void showAlertAboutus(MainActivity main) {
+
+
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
+
+        builder.setView(getLayoutInflater().inflate(R.layout.alert, null));
+
+        builder.setPositiveButton("contactar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                String[] recipients = {"aBocados@gmail.com"};
+                intent.putExtra(Intent.EXTRA_EMAIL, recipients);
+                intent.putExtra(Intent.EXTRA_SUBJECT, "");
+                intent.setType("text/html");
+                intent.setPackage("com.google.android.gm");
+                startActivity(Intent.createChooser(intent, "Enviar mail"));
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+
+    }
 
     //---------------appbar
 
@@ -166,156 +204,40 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
+        if (id == R.id.item3) {
+            showAlertAboutus(MainActivity.this);
+        }
         if (id == R.id.item2) {
             showAlertNevera(MainActivity.this);
         }
         if (id == R.id.item4) {
-            showAlertDialogButtonClicked(MainActivity.this);
+            showAlertDesconectar(MainActivity.this);
         }
         return super.onOptionsItemSelected(item);
     }
 
 
+    //-----------contextmenu imagenes
+
+
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         menu.add(0, v.getId(), 0, "Pulse aqui para ir al link");
         menu.add(0, 1, 0, "Pulsa aqui para descargar");
     }
-        /*
-            public boolean onContextItemSelected(MenuItem item) {
-                if (item.getTitle() == "Pulsa aqui para descargar") {
-
-            }*/
-}
-
-
-
-
-
-
-/*//guardar la foto
-
- public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        super.onCreateContextMenu(menu, v, menuInfo);
-        menu.setHeaderTitle("Select Menu");
-        menu.add(0, v.getId(), 0, "Pulse aqui para ir al link");
-        menu.add(0, 1, 0, "Pulsa aqui para descargar");
-    }
-
 
     public boolean onContextItemSelected(MenuItem item) {
-        final WebView.HitTestResult webViewHitTestResult = miVisorWeb.getHitTestResult();
-
         if (item.getTitle() == "Pulsa aqui para descargar") {
-            String DownloadImageURL = webViewHitTestResult.getExtra();
-
-            if (URLUtil.isValidUrl(DownloadImageURL)) {
-
-                DownloadManager.Request mRequest = new DownloadManager.Request(Uri.parse(DownloadImageURL));
-                mRequest.allowScanningByMediaScanner();
-                mRequest.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-                DownloadManager mDownloadManager = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
-                mDownloadManager.enqueue(mRequest);
-
-                Toast.makeText(MainActivity.this, "Imagen descargada corectamente...", Toast.LENGTH_LONG).show();
-            } else {
-                Toast.makeText(MainActivity.this, "Sorry.. Something Went Wrong...", Toast.LENGTH_LONG).show();
-            }
-            return false;
+            Toast.makeText(MainActivity.this, "Funcionalidad aun no añadida", Toast.LENGTH_LONG).show();
         }
         if (item.getTitle() == "Pulse aqui para ir al link") {
-            String webUrl = miVisorWeb.getUrl();
-            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(webUrl)));
+            Toast.makeText(MainActivity.this, "Funcionalidad aun no añadida", Toast.LENGTH_LONG).show();
         }
         return false;
     }
-*/
+
+}
 
 
-//webview y swipe
-
-   /* WebView mycontext = (WebView) findViewById(R.id.vistaweb);
-        registerForContextMenu(mycontext);*//*
-
-        swipeLayout = (SwipeRefreshLayout) findViewById(R.id.myswipe);
-        swipeLayout.setOnRefreshListener(mOnRefreshListener);
-
-        //La vista dentro es un webview con permiso para zoom
-     *//*   miVisorWeb = (WebView) findViewById(R.id.vistaweb);*//*
-        //  miVisorWeb.getSettings().setJavaScriptEnabled(true);
-      *//*  miVisorWeb.getSettings().setBuiltInZoomControls(true);
-        miVisorWeb.loadUrl("https://thiscatdoesnotexist.com/");*/
-
-
-//refresh
-
-  /*  protected SwipeRefreshLayout.OnRefreshListener mOnRefreshListener = new SwipeRefreshLayout.OnRefreshListener() {
-        @Override
-        public void onRefresh() {
-            Toast toast0 = Toast.makeText(MainActivity.this, "Hi there! I don't exist :)", Toast.LENGTH_LONG);
-            miVisorWeb.reload();
-            swipeLayout.setRefreshing(false);
-            swipeLayout.setProgressBackgroundColorSchemeResource(R.color.boton);
-        }
-    };
-
-
-    //menu contextual pero con bajar foto
-
-
-
-
-//modo normal sin descargas
-
-/* @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        super.onCreateContextMenu(menu, v, menuInfo);
-        final WebView.HitTestResult result = miVisorWeb.getHitTestResult();
-        MenuItem.OnMenuItemClickListener handler = new MenuItem.OnMenuItemClickListener() {
-            public boolean onMenuItemClick(MenuItem item) {
-                // handle on context menu click
-                return true;
-            }
-        };
-    }
-
-    @Override
-    public boolean onContextItemSelected(MenuItem item) {
-
-        switch (item.getItemId()) {
-            case R.id.item1:
-                Toast toast = Toast.makeText(this, "Item copied",
-                        Toast.LENGTH_LONG);
-//                toast.show();
-
-                final ConstraintLayout mLayout =  findViewById(R.id.myMainConstraint);
-
-                Snackbar snackbar = Snackbar
-                        .make(mLayout, "fancy a Snack while you refresh?", Snackbar.LENGTH_LONG)
-                        .setAction("UNDO", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                Snackbar snackbar1 = Snackbar.make(mLayout, "Action is restored!", Snackbar.LENGTH_SHORT);
-                                snackbar1.show();
-                            }
-                        });
-
-                snackbar.show();
-
-
-                return true;
-
-            case R.id.item2:
-                Toast toast2 = Toast.makeText(this, "Downloading item...",
-                        Toast.LENGTH_LONG);
-                toast2.show();
-                return true;
-
-            default:
-                return super.onContextItemSelected(item);
-        }
-
-    }
-*/
 
 

@@ -6,7 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/gradient">
+    >
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/fondomain"
+        android:alpha="0.4"
+        android:scaleType="centerCrop"
+        tools:ignore="MissingConstraints" />
+
+
 
     <ScrollView
         android:layout_width="309dp"
@@ -18,7 +27,9 @@
         app:layout_constraintStart_toStartOf="@+id/guideline1"
         app:layout_constraintTop_toTopOf="parent">
 
+
         <LinearLayout
+            android:id="@+id/linear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -186,27 +197,3 @@
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <!-- <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/myswipe"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-
-        &lt;!&ndash;<TextView
-            android:id="@+id/textTap"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="pulsame un rato"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />&ndash;&gt;
-
-        <WebView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/vistaweb"/>
-
-
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
--->

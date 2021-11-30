@@ -8,11 +8,11 @@
 
     <ImageView
         android:id="@+id/fondo"
-        android:alpha="0.7"
+        android:alpha="0.4"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:scaleY="-1"
+
         />
 
 
@@ -23,7 +23,6 @@
         android:id="@+id/anima"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
-        android:layout_marginTop="80dp"
         app:layout_constraintBottom_toTopOf="@id/username"
         app:layout_constraintEnd_toStartOf="@id/guideline4"
         app:layout_constraintStart_toStartOf="@id/guideline3"
