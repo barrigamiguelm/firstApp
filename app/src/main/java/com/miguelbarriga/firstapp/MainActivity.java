@@ -2,6 +2,8 @@ package com.miguelbarriga.firstapp;
 
 import static android.content.ContentValues.TAG;
 
+import static com.bumptech.glide.request.RequestOptions.bitmapTransform;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -9,6 +11,8 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
+import com.bumptech.glide.Glide;
 
 import android.Manifest;
 import android.app.Dialog;
@@ -41,6 +45,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -51,19 +57,22 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.lang.reflect.Array;
 
+import jp.wasabeef.glide.transformations.BlurTransformation;
+
 public class MainActivity extends AppCompatActivity {
 
 
     private SwipeRefreshLayout swipeLayout;
     AlertDialog dialog;
     AlertDialog.Builder builder;
-    ImageView foto1, foto2, foto3, foto4, foto5, foto6, foto7;
+    ImageView foto1, foto2, foto3, foto4, foto5, foto6, foto7, imagenfondo;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         foto1 = (ImageView) findViewById(R.id.foto1);
         foto2 = (ImageView) findViewById(R.id.foto2);
@@ -73,8 +82,6 @@ public class MainActivity extends AppCompatActivity {
         foto6 = (ImageView) findViewById(R.id.foto6);
         foto7 = (ImageView) findViewById(R.id.foto7);
 
-        /*linea = (LinearLayout) findViewById(R.id.linear);*/
-
         registerForContextMenu(foto1);
         registerForContextMenu(foto2);
         registerForContextMenu(foto3);
@@ -82,6 +89,14 @@ public class MainActivity extends AppCompatActivity {
         registerForContextMenu(foto5);
         registerForContextMenu(foto6);
         registerForContextMenu(foto7);
+
+
+        ImageView cocina = findViewById(R.id.fondomain);
+        Glide.with(this)
+                .load(R.drawable.fondologin)
+                .transition(DrawableTransitionOptions.withCrossFade(100))
+                .apply(bitmapTransform(new BlurTransformation(50)))
+                .into(cocina);
 
 
     }

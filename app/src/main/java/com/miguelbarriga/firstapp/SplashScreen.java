@@ -55,12 +55,10 @@ public class SplashScreen extends AppCompatActivity {
         TextView tv1 = findViewById(R.id.tv1);
 
 
-        Glide.with(this)
 
-                .load("https://images.pexels.com/photos/1580466/pexels-photo-1580466.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
-                .transition(DrawableTransitionOptions.withCrossFade(100))
-                .centerCrop()
-                .apply(bitmapTransform(new BlurTransformation(22)))
+        Glide.with(this)
+                .load(R.drawable.avocado4)
+                .apply(bitmapTransform(new BlurTransformation(40)))
                 .into(fondo);
 
 

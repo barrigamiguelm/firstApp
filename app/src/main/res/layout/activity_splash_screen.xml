@@ -12,8 +12,7 @@
         android:id="@+id/fondo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:alpha="0.2"/>
+        android:scaleType="centerCrop" />
 
 
     <com.airbnb.lottie.LottieAnimationView

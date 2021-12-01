@@ -1,5 +1,7 @@
 package com.miguelbarriga.firstapp;
 
+import static com.bumptech.glide.request.RequestOptions.bitmapTransform;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,6 +11,10 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+
+import jp.wasabeef.glide.transformations.BlurTransformation;
+import jp.wasabeef.glide.transformations.MaskTransformation;
+import jp.wasabeef.glide.transformations.gpu.BrightnessFilterTransformation;
 
 public class Signup extends AppCompatActivity {
 
@@ -21,23 +27,19 @@ public class Signup extends AppCompatActivity {
         ImageView mGirl = findViewById(R.id.fondo);
 
         Glide.with(this)
-                .load(R.drawable.tabla2)
-
-//                .load("https://t1.ev.ltmcdn.com/es/posts/4/9/2/que_es_ser_vegano_1294_1_600.jpg")
-                .transition(DrawableTransitionOptions.withCrossFade(100))
-//                .centerCrop()
-//                .placeholder(new ColorDrawable(this.getResources().getColor(R.color.fucsia_200)))
-//                .circleCrop()
+                .load(R.drawable.fondologinbuena)
+                .apply(bitmapTransform(new BlurTransformation(60)))
                 .into(mGirl);
 
     }
 
 
-    public void openLogin(View v){
+    public void openLogin(View v) {
         Intent intent = new Intent(Signup.this, LoginActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
+
     @Override
     public void finish() {
         super.finish();

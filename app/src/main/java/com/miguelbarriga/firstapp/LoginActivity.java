@@ -1,5 +1,7 @@
 package com.miguelbarriga.firstapp;
 
+import static com.bumptech.glide.request.RequestOptions.bitmapTransform;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -16,6 +18,8 @@ import com.airbnb.lottie.LottieAnimationView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 
+import jp.wasabeef.glide.transformations.BlurTransformation;
+
 
 public class LoginActivity extends AppCompatActivity {
     LottieAnimationView lottieAnimationView;
@@ -27,21 +31,15 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        boton1 = (Button)  findViewById(R.id.boton1);
+        boton1 = (Button) findViewById(R.id.boton1);
         lottieAnimationView = findViewById(R.id.anima);
-        ImageView mBoy = findViewById(R.id.fondo);
+        ImageView cafe = findViewById(R.id.fondo);
 
         Glide.with(this)
-                .load(R.drawable.mesa)
-
-
-  //              .load("https://t1.ev.ltmcdn.com/es/posts/4/9/2/que_es_ser_vegano_1294_1_600.jpg")
-//                .load("https://images.unsplash.com/photo-1565214975484-3cfa9e56f914?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1482&q=80")
+                .load(R.drawable.fondochampis)
                 .transition(DrawableTransitionOptions.withCrossFade(100))
-//                .centerCrop()
-//                .placeholder(new ColorDrawable(this.getResources().getColor(R.color.fucsia_200)))
-//                .circleCrop()
-                .into(mBoy);
+                .apply(bitmapTransform(new BlurTransformation(60)))
+                .into(cafe);
 
 
         Animation animlogin = AnimationUtils.loadAnimation(
@@ -49,27 +47,22 @@ public class LoginActivity extends AppCompatActivity {
         lottieAnimationView.startAnimation(animlogin);
 
 
-
     }
 
 
-
-    public void openMain(View v){
+    public void openMain(View v) {
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-    }
-    public void openSignup(View v){
-        Intent intent = new Intent(LoginActivity.this, Signup.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
-
-
-
+    public void openSignup(View v) {
+        Intent intent = new Intent(LoginActivity.this, Signup.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+    }
 
 
 }
