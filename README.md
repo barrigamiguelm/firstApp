@@ -2,7 +2,7 @@
 
 
 
-| <img src="/img/animacion2.gif"/>  |   
+| <img src="/img/anim.gif"/>  |   
 |---|
 
 
