@@ -2,4 +2,5 @@
 
 ![Animacion](/img/animacion1.gif)
 
-<img src="/img/animacion1.gif" width="1000" height="800" />
+col1 | col2
+<img src="/img/animacion1.gif"/> | <img src="/img/animacion1.gif"/>
