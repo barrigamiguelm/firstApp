@@ -1,7 +1,8 @@
  ## aBocados
 
+![](/img/anim.gif)
 
-![Animacion de entrada] (/img/anim.gif)
+![](/img/fotologin.gif)
 
-
+![](/img/main.gif)
 
