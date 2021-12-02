@@ -1,9 +1,7 @@
  ## aBocados
 
 
-
-| <img src="/img/anim.gif"/>  |   
-|---|
+![Animacion de entrada] (/img/anim.gif)
 
 
 
