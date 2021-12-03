@@ -112,9 +112,6 @@ public class MainActivity extends AppCompatActivity {
 
         builder.setTitle("Desconectar");
         builder.setMessage("¿Seguro que deseas desconectarte?");
-        ;
-
-        // builder.setView(getLayoutInflater().inflate(R.layout.alert, null));
 
 
         builder.setPositiveButton("Si", new

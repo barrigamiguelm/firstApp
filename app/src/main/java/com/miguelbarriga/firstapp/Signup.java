@@ -30,7 +30,6 @@ public class Signup extends AppCompatActivity {
                 .load(R.drawable.fondologinbuena)
                 .apply(bitmapTransform(new BlurTransformation(60)))
                 .into(mGirl);
-
     }
 
 
